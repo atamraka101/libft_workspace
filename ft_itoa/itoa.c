@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:18:57 by atamraka          #+#    #+#             */
-/*   Updated: 2021/11/18 13:31:33 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/11/18 22:11:02 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,54 +23,84 @@
 static int length(int n)
 {
 	int i;
-	int copy;
+	int nb;
+
+	i = 0;
+	nb = n;
+	if (n <= 0)
+	{
+		i++;
+		if (n < 0)
+			nb = -n;
+		printf("value of n %d\n", n);
+	}
+	while (n != 0)
+	{
+		n = n/10;
+		i++;
+	}
+	return (i);
+}
+
+
+static int lengthc(int n)
+{
+	int i;
+	unsigned int copy;
 
 	i = 0;
 	copy = n;
-	if (copy <= 0)
+	if (n <= 0)
+	{
 		i++;
+		if (n < 0)
+		{
+			copy *= -1;
+			printf("Copy %d\n", copy);
+		}
+	}
+
 	while (copy != 0)
 	{
-		printf("%d\n", copy);
+		//printf("%d\n", copy);
 		copy = copy / 10;
-		printf("%d\n", copy);
+		//printf("%d\n", copy);
 		i++;
 		/*if (copy == 0)
 		{
 			i++;
 		}*/
 	}
-	printf("%d\n", i);
+	//printf("%d\n", i);
 	//printf("Testing 3\n");
+	printf("Length of %d = %d\n", n, i);
 	return (i);
 }
 
 static char *set_string(char *a, int n, int i)
 {
-	//printf("%d\n", n);
-	//printf("%d\n", i);
+	unsigned int copy;
+
+	copy = n;
 	a[i--] = '\0';
-	printf("%d\n", i);
-	//printf("Testing d\n");
 	if (n == 0)
 	{
 		a[0] = '0';
 		return (a);
 	}
-	//printf("Testing 2\n");
 	if (n < 0)
 	{
 		a[0] = '-';
-		n = n * (-1);/////////////////////
-		printf("Testing \n");
-		printf("%d\n", n);
-
+		printf("value of unsigned copy: %d\n", copy);
+		copy *= -1;
+		printf("value of copy: %d\n", copy);
+		//i++;
 	}
-	while (n > 0)
+	//printf("value of n: %d\n", n);
+	while (copy > 0)
 	{
-		a[i] = (n % 10) + '0';
-		n = n / 10;
-		printf("Testing \n");
+		a[i] = (copy % 10) + '0';
+		copy = copy / 10;
 		i--;
 	}
 	return (a);
@@ -82,12 +112,12 @@ char* ft_itoa(int n)
 	char *a;
 
 	i = length(n);
-	a = (char*)malloc((sizeof(char))*(i+1));
+	a = (char*)malloc((sizeof(char))*(i + 1));
 	if (!a)
-		return NULL;
+		return (NULL);
 	//printf("Testing 1\n");
 	set_string(a, n, i);
-	printf("%s", a);
+	//printf("%s", a);
 	//puts(a);
 	//printf("Testing f\n");
 	return (a);
