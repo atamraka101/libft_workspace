@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char* ft_itoa(int n);
+char	*ft_itoa(int n);
 
 int main(void)
 {
@@ -11,19 +11,20 @@ int main(void)
 	i = 20;
 	res = ft_itoa(i);
 	printf("%s\n", res);
-	res = NULL;
+
 	free(res);
+	res = NULL;
 	//printf("Test");
 	//printf("%s", res);
-	i = -214748364;
+	i = -2147483648;
 	res = ft_itoa(i);
 	printf("%s\n", res);
-	res = NULL;
+
 	free(res);
 	i = 2147483647;
 	res = ft_itoa(i);
 	printf("%s\n", res);
-	res = NULL;
+
 	free(res);
 	return (1);
 }

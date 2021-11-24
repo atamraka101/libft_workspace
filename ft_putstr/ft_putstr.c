@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 11:26:41 by atamraka          #+#    #+#             */
-/*   Updated: 2021/11/21 21:54:36 by atamraka         ###   ########.fr       */
+/*   Created: 2021/11/15 13:00:05 by atamraka          #+#    #+#             */
+/*   Updated: 2021/11/17 13:59:19 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-//#include <stddef.h>
-//#define size_t unsigned long
 #include <unistd.h>
 
-void	*ft_memset(void *str, int c, size_t n)
+void	ft_putstr(char const *s)
 {
-	unsigned char	*hold;
-	size_t	i;
+	int	i;
 
-	hold = (unsigned char *)str;
 	i = 0;
-	if (n == 0)
-		return;
-	while (i < n)
+	while (s[i] != '\0')
 	{
-		hold[i] = (unsigned char)c;
+		write(1, &s[i], 1);
 		i++;
 	}
-	return (hold);
 }

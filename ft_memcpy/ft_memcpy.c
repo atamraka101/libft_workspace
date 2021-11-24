@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 10:27:03 by atamraka          #+#    #+#             */
-/*   Updated: 2021/11/21 21:55:49 by atamraka         ###   ########.fr       */
+/*   Created: 2021/11/21 22:11:24 by atamraka          #+#    #+#             */
+/*   Updated: 2021/11/22 20:11:15 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 /*
-** write zeroes to a byte string
-** function writes n zeroed bytes to the string s.  If n is zero, bzero() does nothing.
+** copy memory area
+** fun copies n bytes from memory area src to dst
+** overlap behavior undefined
+** Applications in which dst and src might overlap should memmove(3) instead.
+** returns the original value of dst
 */
 
-void	ft_bzero(void *s, size_t n)
-//char	*ft_bzero(char *s, size_t n)
-{
-	size_t i;
-	unsigned char *a;
+#include "libft.h"
 
-	i = 0;
-	a = (unsigned char *)s;
-	//printf("%c", a[i]);
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	size_t			i;
+	unsigned char	*d;
+	unsigned char	*s;
+
+	if (src == NULL)
+		return (NULL);
 	if (n == 0)
 		return ;
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	i = 0;
 	while (i < n)
 	{
-		a[i] = 0;
+		d[i] = s[i];
 		i++;
 	}
-	//printf("%s", a);
-	//return (a);
+	return (d);
 }
