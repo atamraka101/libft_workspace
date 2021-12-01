@@ -39,8 +39,10 @@ int main(void)
 	char *a = ft_strdup(s);
 	//printf("%p\n", strdup(s));
 	printf("%s\n", a);
-	a = NULL;
-	free (a);
+	if (a != NULL)
+		free (a);
+	/*if (a)
+		free (a);*/
 	puts(a);
 	return 1;
 }
