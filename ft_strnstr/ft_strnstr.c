@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 21:38:25 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/01 21:46:17 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/02 19:58:54 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,30 @@
 ** needle in the string haystack, where not more than len characters are
 ** searched. Characters that appear after a `\0' character are not searched.
 */
-//#include "libft.h"
-#include <string.h>
+
+#include "libft.h"
 
 char	*ft_strnstr(char *str, char *need, size_t len)
 {
+	size_t	i;
+	size_t	j;
 
+	if (needle[0] == '\0')
+		return ((char *)haystack);
+	i = 0;
+	while (haystack[i] && i < len)
+	{
+		j = 0;
+		if (haystack[i] == needle [j])
+		{
+			while (i + j < len && haystack[i + j] == needle[j])
+			{
+				j++;
+				if (!needle[j])
+					return ((char *)&haystack[i]);
+			}
+		}
+		i++;
+	}
+	return (NULL);
 }
