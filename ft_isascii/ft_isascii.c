@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 21:50:12 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/03 11:24:17 by atamraka         ###   ########.fr       */
+/*   Created: 2021/12/03 12:20:08 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/03 12:27:53 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** alphabetic character test and not other character
+** tests for an ASCII character,
+** which is any character between 0 and octal 0177(127 dec) inclusive.
 */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isascii(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);
+}
+
 }

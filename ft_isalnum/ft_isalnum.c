@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 21:50:12 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/03 11:24:17 by atamraka         ###   ########.fr       */
+/*   Created: 2021/12/03 12:31:10 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/03 12:36:20 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** alphabetic character test and not other character
+** alphanumeric character test
+** tests for any character for which isalpha(3) or isdigit(3) is true
 */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isalnum(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
 	else
 		return (0);

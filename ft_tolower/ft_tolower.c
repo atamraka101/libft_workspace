@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 21:50:12 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/03 11:24:17 by atamraka         ###   ########.fr       */
+/*   Created: 2021/12/03 11:48:31 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/03 11:49:55 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** alphabetic character test and not other character
+** upper case to lower case letter conversion
 */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_tolower(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
+	return (c);
 }

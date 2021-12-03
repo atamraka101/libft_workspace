@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 21:50:12 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/03 11:24:17 by atamraka         ###   ########.fr       */
+/*   Created: 2021/12/03 11:52:51 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/03 12:16:59 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** alphabetic character test and not other character
+** function tests for any printing character, including space (` '
 */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isprint(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if (c >= ' ' && c <= '~')
 		return (1);
 	else
 		return (0);
