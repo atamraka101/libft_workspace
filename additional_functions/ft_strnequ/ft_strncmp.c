@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 15:30:44 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/12 11:24:03 by atamraka         ###   ########.fr       */
+/*   Created: 2021/12/02 20:19:31 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/02 21:48:27 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** lexicographically compared
+** size_t uses the full size of the string
+** comparison using unsigned chars
+*/
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_strncmp(const char *ss1, const char *ss2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*s1;
+	unsigned char	*s2;
 
+	s1 = (unsigned char *)ss1;
+	s2 = (unsigned char *)ss2;
 	i = 0;
-	while (s[i] != '\0')
+	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i] && i < n - 1)
 		i++;
-	return (i);
+	return (s1[i] - s2[i]);
 }

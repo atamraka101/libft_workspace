@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 21:26:39 by atamraka          #+#    #+#             */
-/*   Updated: 2021/11/30 16:22:21 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/12 11:00:47 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strcat(char *s1, const char *s2)
 	while (s1[i])
 		i++;
 	while (s2[j])
-		s[i++] = s2[j++];
+		s1[i++] = s2[j++];
 	s1[i] = '\0';
 	return (s1);
 }

@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 15:30:44 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/12 11:24:03 by atamraka         ###   ########.fr       */
+/*   Created: 2021/12/07 14:16:43 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/12 10:11:45 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Allocates (with malloc(3)) and returns a “fresh” string ending with ’\0’.
+** Each character of the string is initialized at ’\0’.
+** If the allocation fails the function returns NULL.
+** returns: the string allocated and intialized to 0.
+*/
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strnew(size_t size)
 {
-	size_t	i;
+	char	*new;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	new = (char *)malloc(sizeof(char) * (size + 1));
+	if (!new)
+		return (NULL);
+	ft_memset(new, '\0', size);
+	return (new);
 }

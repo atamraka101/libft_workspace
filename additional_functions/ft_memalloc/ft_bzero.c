@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 15:30:44 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/12 11:24:03 by atamraka         ###   ########.fr       */
+/*   Created: 2021/11/13 13:59:22 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/03 20:25:35 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*
+** write zeroes to a byte string
+** he bzero() function writes n zeroed bytes to the string s.
+** If n is zero, bzero() does nothing.
+** it doesn't return anything
+*/
 
-size_t	ft_strlen(const char *s)
+//#include "libft.h"
+#include <stdlib.h>
+void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*a;
 
 	i = 0;
-	while (s[i] != '\0')
+	a = (unsigned char *)s;
+	if (n == 0)
+		return ;
+	while (i < n)
+	{
+		a[i] = 0;
 		i++;
-	return (i);
+	}
 }

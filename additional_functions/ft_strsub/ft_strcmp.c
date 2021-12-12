@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 15:30:44 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/12 11:24:03 by atamraka         ###   ########.fr       */
+/*   Created: 2021/12/02 20:06:09 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/02 21:05:49 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_strcmp(const char *ss1, const char *ss2)
 {
-	size_t	i;
+	int				i;
+	unsigned char	*s1;
+	unsigned char	*s2;
 
+	s1 = (unsigned char *)ss1;
+	s2 = (unsigned char *)ss2;
 	i = 0;
-	while (s[i] != '\0')
+	while (s1[i] == s2[i] && s1[i] && s2[i])
 		i++;
-	return (i);
+	return (s1[i] - s2[i]);
 }

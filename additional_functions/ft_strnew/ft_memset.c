@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 15:30:44 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/12 11:24:03 by atamraka         ###   ########.fr       */
+/*   Created: 2021/11/05 11:26:41 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/07 15:25:53 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+/*
+** memset - fill byte string with byte value
+*/
 
+void	*ft_memset(void *str, int c, size_t n)
+{
+	unsigned char	*hold;
+	size_t			i;
+
+	if (str == NULL || n == 0)
+		return (NULL);
+	hold = (unsigned char *)str;
 	i = 0;
-	while (s[i] != '\0')
+	while (i < n)
+	{
+		hold[i] = (unsigned char)c;
 		i++;
-	return (i);
+	}
+	return (hold);
 }
