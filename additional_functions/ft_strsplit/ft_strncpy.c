@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:18:43 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/16 13:35:29 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/16 13:41:08 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {

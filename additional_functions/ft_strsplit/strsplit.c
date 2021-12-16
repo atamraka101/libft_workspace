@@ -1,105 +1,77 @@
-#include <stdlib.h>
-#include <stdio.h>
+/*
+** Allocates (with malloc(3)) and returns an array of “fresh”
+** strings (all ending with ’\0’, including the array itself)
+** obtained by spliting s using the character c as a delimiter.
+** If the allocation fails the function returns NULL.
+** Example: ft_strsplit("*hello*fellow***students*", ’*’) returns
+** the array ["hello", "fellow", "students"].
+** Param. #1 The string to split.
+** Param. #2 The delimiter character.
+** Return value The array of “fresh” strings result of the split.
+*/
 
-int length(char const *s, char c)
+#include "libft.h"
+//#include <stdio.h>
+//#include <string.h>
+
+static int n_words_words(char const *s, char c)
 {
 	int i;
-	int len;
-	int c_count;
+	int n_words;
 
 	i = 0;
-	len = 0;
-	c_count = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i] != '\0')
+	n_words = 0;
+	while (s[i])
 	{
 		while (s[i] == c)
-		{
-			c_count++;
 			i++;
-		}
-		if (c_count > 1)
-			len++;
-		c_count = 0;
-		len++;
-		i++;
+		if (s[i] != '\0')
+			n_words++;
+		while (s[i] && (s[i] != c))
+			i++;
 	}
-	len++;
-	//printf("Value of i = %d\n", i);
-	//printf("Value of c_count = %d\n", c_count);
-	//printf("Value of len = %d\n", len);
-	return (len);
+	return (n_words);
+}
+
+static char *inner_list(char const *s, size_t n)
+{
+	char *list;
+
+	list = (char *)malloc(sizeof(char) * n + 1);
+	if (!list)
+		return (NULL);
+
+	list = ft_strncpy(list, s, n);
+	//list = strncpy(list, s, n);
+	list[n] = '\0';
+	//printf("innerlist %s\n", list);
+	return (list);
 }
 char	**ft_strsplit(char const *s, char c)
 {
-	int l;
 	int i;
 	int j;
-	char **new_set;
-	int len;
+	int k;
+	char **res;
 
-	l = 0;
 	i = 0;
-	j = 0;
-	len = length(s, c);
-	new_set = (char **)malloc(sizeof(char) * len);
-	if (!new_set)
+	k = 0;
+	res = (char **)malloc(sizeof(char *) * n_words_words(s, c) + 1);
+	if (!res)
 		return (NULL);
-	if (s[l] == c)
-		l++;
-	while (s[l] != '\0')
+	while (s[i])
 	{
-		while (s[l] == c)
+		while (s[i] == c)
+			i++;
+		j = i;
+		while (s[i] && s[i] != c)
+			i++;
+		if (i > j)
 		{
-			l++;
-			if (s[l] != c)
-			{
-				new_set[i][j] = '\0';
-				i++;
-				j++;
-				l++;
-				break;
-			}
+			res[k] = inner_list(&s[j], i - j);
+			k++;
 		}
-		new_set[i][j] = s[l];
-		l++;
-		j++;
 	}
-	i = 0;
-	j = 0;
-	while (new_set[i][j] != '\0')
-	{
-		while (new_set[i][j] != '\0')
-		{
-			printf("%c\n", new_set[i][j]);
-			j++;
-		}
-		i++;
-
-	}
-	return (new_set);
-}
-int main(void)
-{
-	char *s1 = "*hello*fellow***students*";
-	//length(s1, '*');
-	char **a;
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	a = ft_strsplit(s1, '*');
-	while (a[i][j] != '\0')
-	{
-		while (a[i][j] != '\0')
-		{
-			printf("%c", a[i][j]);
-			j++;
-		}
-		i++;
-	}
-	free (a);
-	return (1);
+	res[k] = NULL;
+	return (res);
 }

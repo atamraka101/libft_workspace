@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 16:18:43 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/16 13:35:29 by atamraka         ###   ########.fr       */
+/*   Created: 2021/11/24 15:30:44 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/12 11:24:37 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** copies len characters from src to dst.
-** src < len, then remainning dst filled with '\0' characters
-** returns dst
-*/
-
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (src[i])
-	{
-		if (len != 0)
-		{
-			dst[i] = src[i];
-			len--;
-		}
+	while (s[i] != '\0')
 		i++;
-	}
-	while (len != 0)
-	{
-		dst[i++] = '\0';
-		len--;
-	}
-	return (dst);
+	return (i);
 }

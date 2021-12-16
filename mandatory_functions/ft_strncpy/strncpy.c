@@ -13,8 +13,11 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	i = 0;
 	while (src[i])
 	{
-		if (len-- != 0)
+		if (len != 0)
+		{
 			dst[i] = src[i];
+			len--;
+		}
 		i++;
 	}
 	while (len != 0)

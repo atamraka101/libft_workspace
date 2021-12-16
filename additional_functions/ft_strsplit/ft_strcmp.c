@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 16:18:43 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/16 13:35:29 by atamraka         ###   ########.fr       */
+/*   Created: 2021/12/02 20:06:09 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/16 11:46:05 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** copies len characters from src to dst.
-** src < len, then remainning dst filled with '\0' characters
-** returns dst
-*/
-
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+int	ft_strcmp(const char *ss1, const char *ss2)
 {
-	int	i;
+	int				i;
+	unsigned char	*s1;
+	unsigned char	*s2;
 
+	s1 = (unsigned char *)ss1;
+	s2 = (unsigned char *)ss2;
 	i = 0;
-	while (src[i])
-	{
-		if (len != 0)
-		{
-			dst[i] = src[i];
-			len--;
-		}
+	while (s1[i] == s2[i] && s1[i] && s2[i])
 		i++;
-	}
-	while (len != 0)
-	{
-		dst[i++] = '\0';
-		len--;
-	}
-	return (dst);
+	return (s1[i] - s2[i]);
 }

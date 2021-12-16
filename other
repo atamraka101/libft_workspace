@@ -1,0 +1,4 @@
+to know hidden headers
+
+awk 'FNR==1{print FILENAME} /<*.h>/' *ft_*
+

@@ -1,11 +1,12 @@
 #include "libft.h"
 #include <stdio.h>
-//checks for int and size_t datatypes clash, result can be interchangeable like char and int
+//checks for int and size_t datatypes clash, result can be interchangeable
+// like char and int, unsigned int
 int main(void)
 {
 	char s[] = "sfdsfsd";
-	size_t a;
+	unsigned int a;
 	a = ft_strlen(s);
-	printf("%zu", a);
+	printf("%u", a);
 	return (1);
 }

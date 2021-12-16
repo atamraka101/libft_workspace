@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 16:18:43 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/16 13:35:29 by atamraka         ###   ########.fr       */
+/*   Created: 2021/11/05 11:26:41 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/13 21:12:27 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** copies len characters from src to dst.
-** src < len, then remainning dst filled with '\0' characters
-** returns dst
-*/
-
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
-{
-	int	i;
+/*
+** memset - fill byte string with byte value
+*/
 
+void	*ft_memset(void *str, int c, size_t n)
+{
+	unsigned char	*hold;
+	size_t			i;
+
+	if (str == NULL || n == 0)
+		return (NULL);
+	hold = (unsigned char *)str;
 	i = 0;
-	while (src[i])
+	while (i < n)
 	{
-		if (len != 0)
-		{
-			dst[i] = src[i];
-			len--;
-		}
+		hold[i] = (unsigned char)c;
 		i++;
 	}
-	while (len != 0)
-	{
-		dst[i++] = '\0';
-		len--;
-	}
-	return (dst);
+	return (hold);
 }

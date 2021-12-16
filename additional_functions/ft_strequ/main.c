@@ -6,8 +6,10 @@ int main(void)
 	char s1[] = "First";
 	char s2[] = "Second";
 	char s3[] = "First";
+	char *lol = NULL;
 	printf("ft_strequ..........\n");
-	if (ft_strequ(s1, s2) == 1)
+	if ()
+	/*if (ft_strequ(s1, s2) == 1)
 		printf("WRONG\n");
 	else
 		printf("Right\n");
@@ -15,5 +17,5 @@ int main(void)
 		printf("Right\n");
 	else
 		printf("wrong\n");
-	return (1);
+	return (1);*/
 }
