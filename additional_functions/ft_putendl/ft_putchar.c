@@ -6,11 +6,11 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 12:51:47 by atamraka          #+#    #+#             */
-/*   Updated: 2021/11/17 15:06:01 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/16 15:08:52 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar(char c)
 {

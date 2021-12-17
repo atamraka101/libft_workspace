@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 13:00:05 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/17 10:49:52 by atamraka         ###   ########.fr       */
+/*   Created: 2021/12/16 15:20:31 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/16 20:06:02 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Outputs the integer n to the standard output.
+** Param. #1 The integer to output.
+*/
+
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_putnbr(int n)
 {
-	int	i;
+	unsigned int	nb;
 
-	i = 0;
-	if (!s)
-		return ;
-	while (s[i] != '\0')
+	nb = n;
+	if (n < 0)
 	{
-		write(1, &s[i], 1);
-		i++;
+		ft_putchar('-');
+		nb *= -1;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+	{
+		ft_putchar(nb + '0');
 	}
 }

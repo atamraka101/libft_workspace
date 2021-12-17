@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 13:00:05 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/17 10:49:52 by atamraka         ###   ########.fr       */
+/*   Created: 2021/12/16 20:09:00 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/17 10:50:59 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Outputs the char c to the file descriptor fd.
+** Param. #1 The character to output.
+** Param. #2 The file descriptor.
+*/
+
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	int	i;
-
-	i = 0;
-	if (!s)
+	if (fd < 0 || !c)
 		return ;
-	while (s[i] != '\0')
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
+	write(fd, &c, 1);
 }

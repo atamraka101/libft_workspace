@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:18:57 by atamraka          #+#    #+#             */
-/*   Updated: 2021/11/19 15:16:17 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/16 14:48:43 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@
 static int	length(int n)
 {
 	int	i;
-	int	nb;
+	//int	nb;
 
 	i = 0;
-	nb = n;
+	//nb = n;
 	if (n <= 0)
 	{
 		i++;
-		if (n < 0)
-			nb = -n;
+		//if (n < 0)
+		//	nb = -n;
 	}
 	while (n != 0)
 	{

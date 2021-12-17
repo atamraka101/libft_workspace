@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:18:57 by atamraka          #+#    #+#             */
-/*   Updated: 2021/11/19 15:05:08 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/16 14:42:00 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 ** negative nos. are supported
 ** returns string representing the integer passed as argument
 */
+//not correct
+
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -27,55 +29,20 @@ static int length(int n)
 
 	i = 0;
 	nb = n;
-	if (n <= 0)
+	while (n <= 0)
 	{
 		i++;
-		if (n < 0)
-			nb = -n;
+		//if (n < 0)
+		//	nb = -n;
 		//printf("value of n %d\n", n);
 	}
 	while (n != 0)
 	{
-		n = n/10;
+		n = n / 10;
 		i++;
 	}
 	return (i);
 }
-
-
-/*static int lengthc(int n)
-{
-	int i;
-	unsigned int copy;
-
-	i = 0;
-	copy = n;
-	if (n <= 0)
-	{
-		i++;
-		if (n < 0)
-		{
-			copy *= -1;
-			printf("Copy %d\n", copy);
-		}
-	}
-
-	while (copy != 0)
-	{
-		//printf("%d\n", copy);
-		copy = copy / 10;
-		//printf("%d\n", copy);
-		i++;
-		if (copy == 0)
-		{
-			i++;
-		}
-*/
-	//printf("%d\n", i);
-	//printf("Testing 3\n");
-	//printf("Length of %d = %d\n", n, i);
-	//return (i);
-//}
 
 static char *set_string(char *a, int n, int i)
 {
@@ -122,3 +89,37 @@ char* ft_itoa(int n)
 	//printf("Testing f\n");
 	return (a);
 }
+
+*static int lengthc(int n)
+{
+	int i;
+	unsigned int copy;
+
+	i = 0;
+	copy = n;
+	if (n <= 0)
+	{
+		i++;
+		if (n < 0)
+		{
+			copy *= -1;
+			printf("Copy %d\n", copy);
+		}
+	}
+
+	while (copy != 0)
+	{
+		//printf("%d\n", copy);
+		copy = copy / 10;
+		//printf("%d\n", copy);
+		i++;
+		if (copy == 0)
+		{
+			i++;
+		}
+*/
+	//printf("%d\n", i);
+	//printf("Testing 3\n");
+	//printf("Length of %d = %d\n", n, i);
+	//return (i);
+//}

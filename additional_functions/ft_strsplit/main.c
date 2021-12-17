@@ -42,7 +42,7 @@ int main(void)
 			if(!ft_strequ(array2[i], expected[i]))
 			{
 				status = 0;
-				break;
+				//break;
 			}
 	}
 	if (status)
