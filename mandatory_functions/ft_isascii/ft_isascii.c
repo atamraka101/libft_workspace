@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 12:20:08 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/03 12:27:53 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/17 21:27:36 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,4 @@ int	ft_isascii(int c)
 		return (1);
 	else
 		return (0);
-}
-
 }

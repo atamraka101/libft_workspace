@@ -6,11 +6,11 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 11:01:56 by atamraka          #+#    #+#             */
-/*   Updated: 2021/11/24 11:40:05 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/17 21:28:25 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int	ft_atoi(const char *str);
 
@@ -7,7 +8,8 @@ int	main(void)
 	int a;
 
 	a = ft_atoi("-+42");
-	printf("-+ ==> %d\n", a);
+	printf("-+42 ==> %d\n", a);
+	printf("-+42 ==> %d", atoi("-+42"));
 	a = ft_atoi("  12345");
 	printf("12345 ==> %d\n", a);
 	a = ft_atoi("AAA123");
