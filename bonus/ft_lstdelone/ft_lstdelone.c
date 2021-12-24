@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:08:53 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/21 13:48:09 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/24 16:03:05 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	if(del != NULL && alst != NULL)
+	if (del != NULL && alst != NULL)
 	{
 		del((*alst)->content, (*alst)->content_size);
 		free(*alst);
