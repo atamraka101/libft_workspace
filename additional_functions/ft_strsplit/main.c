@@ -19,14 +19,18 @@ int main(void)
 	char **array = ft_strsplit("******************0**1**2*3****4*******", '*');
 
 	printf("ft_strsplit.......\n");
-	for (int i = 0; i < 5; i++)
+	int i = 0;
+	while (array[i])
 	{
+
 		if (ft_atoi(array[i]) != i)
 		{
 			printf("%d [KO]\n", i);
 			return (1);
 		}
+		i++;
 	}
+
 	printf("[OK]\n");
 	free_array(array, 5);
 

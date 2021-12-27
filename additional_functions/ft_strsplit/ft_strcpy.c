@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/23 13:54:10 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/24 16:24:51 by atamraka         ###   ########.fr       */
+/*   Created: 2021/11/25 14:28:01 by atamraka          #+#    #+#             */
+/*   Updated: 2021/11/25 16:17:24 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Adds the element new at the beginning of the list.
-** Param. #1 The address of a pointer to the first link of a list.
-** Param. #2 The link to add at the beginning of the list.
-** Return value None.
-** Libc functions None.
+** copy strings
+** copy the string src to dst (including the terminating `\0' character.)
 */
 
-#include "libft.h"
-
-void	ft_lstadd(t_list **alst, t_list *new)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	if (*alst != NULL && new != NULL)
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
 	{
-		new->next = *alst;
-		*alst = new;
+		dst[i] = src[i];
+		i++;
 	}
+	dst[i] = '\0';
+	return (dst);
 }
