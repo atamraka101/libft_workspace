@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 22:11:24 by atamraka          #+#    #+#             */
-/*   Updated: 2021/11/22 20:11:15 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/28 16:27:30 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*d;
 	unsigned char	*s;
 
-	if (src == NULL)
-		return (NULL);
-	if (n == 0)
-		return ;
+	if (!dst && !src && n > 0)
+		return (dst);
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
 	i = 0;

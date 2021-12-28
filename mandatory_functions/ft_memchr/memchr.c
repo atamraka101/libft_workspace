@@ -14,10 +14,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	copy = (unsigned char *)s;
 	while (i < n)
 	{
-		if (copy[i] == (char)c)
+		if (copy[i] == (unsigned char)c)
 			return (&copy[i]);
-		else
-			i++;
+		i++;
 	}
 	return (NULL);
 }

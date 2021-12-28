@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 13:58:37 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/01 14:17:29 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/28 15:30:12 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	len;
 
-	len = 0;
-	while (s[len])
-		len++;
-	len++;
+	len = ft_strlen(s);
 	while (len >= 0)
 	{
 		if (s[len] == (char)c)

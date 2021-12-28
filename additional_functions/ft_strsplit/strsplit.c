@@ -14,10 +14,10 @@
 #include <stdio.h>
 //#include <string.h>
 
-static int n_words(char const *s, char c)
+static int	n_words(char const *s, char c)
 {
-	int i;
-	int n_words;
+	int	i;
+	int	n_words;
 
 	i = 0;
 	n_words = 0;
@@ -33,14 +33,13 @@ static int n_words(char const *s, char c)
 	return (n_words);
 }
 
-static char *inner_list(char const *s, size_t n)
+/*static char	*inner_list(char const *s, size_t n)
 {
-	char *list;
+	char	*list;
 
 	list = (char *)malloc(sizeof(char) * n + 1);
 	if (!list)
 		return (NULL);
-
 	list = ft_strncpy(list, s, n);
 	//list = strncpy(list, s, n);
 	list[n] = '\0';
@@ -48,9 +47,9 @@ static char *inner_list(char const *s, size_t n)
 	return (list);
 }
 
-static int free_array(char ***tab, int count)
+static int	free_array(char ***tab, int count)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < count)
@@ -61,23 +60,22 @@ static int free_array(char ***tab, int count)
 	free(*tab);
 	return (0);
 }
+*/
 
 char	**ft_strsplit(char const *s, char c)
 {
-	int i;
-	int cur;
-	int k;
-	int len;
-	int w_count;
-	char **res;
-	char *hold;
-	char *expand;
+	int	i;
+	int	cur;
+	int	len;
+	int	w_count;
+	char	**res;
+	char	*hold;
+	char	*expand;
 
 	i = 0;
 	cur = 0;
 	len = 0;
 	w_count = n_words(s, c);
-
 	res = (char **)malloc(sizeof(char *) * w_count + 1);
 	res[w_count - 1] = NULL;
 	hold = NULL;
@@ -89,45 +87,21 @@ char	**ft_strsplit(char const *s, char c)
 		{
 			len ++;
 			expand = (char*)malloc(sizeof(char) + 1);
-			expand[len] = '\0';
 			if (hold)
-			{
 				ft_strcpy(expand, hold);
-			}
 			expand[len - 1] = s[cur];
 			if (hold)
-			{
 				free(hold);
-			}
 			hold = expand;
-
-
-
-		} else {
-			if (hold){
+		}
+		else
+		{
+			if (hold)
 				res[i++] = hold;
-			}
-
 			hold = NULL;
 			len = 0;
 		}
 		cur++;
 	}
-	/*while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		printf("s[%d]: %c\n", i, s[i]);
-		i++;
-		j = i;
-		while (s[i] && s[i] != c)
-			i++;
-		if (i > j)
-		{
-			res[k] = inner_list(&s[j], i - j);
-			k++;
-		}
-	}
-	res[k] = NULL;*/
 	return (res);
 }

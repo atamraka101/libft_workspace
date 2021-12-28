@@ -21,5 +21,6 @@ char	*ft_strdup(const char *s1)
 		i++;
 	}
 	//return (&copy[0]);
+	copy[i] = '\0';
 	return (copy);
 }

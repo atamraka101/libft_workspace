@@ -13,10 +13,11 @@ char	*ft_strrchr(const char *s, int c)
 	int len;
 
 	//i = 0;
-	len = 0;
-	while (s[len])
-		len++;
-	len++;
+	//len = 0;
+	//while (s[len])
+	//	len++;
+	//len++;
+	len = ft_strlen(s);
 	while (len >= 0)
 	{
 		if (s[len] == (char)c)

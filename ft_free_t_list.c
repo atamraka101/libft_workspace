@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_free_t_list.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 11:01:56 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/28 16:38:16 by atamraka         ###   ########.fr       */
+/*   Created: 2021/12/27 13:09:33 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/27 13:12:11 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_free_t_list(t_list **list)
 {
-	size_t			i;
-	unsigned char	*copy;
+	t_list	*hold;
+	t_list	*hold2;
 
-	i = 0;
-	copy = (unsigned char *)s;
-	while (i < n)
+	if (list != NULL && *list != NULL)
 	{
-		if (copy[i] == (unsigned char)c)
-			return (&copy[i]);
-		i++;
+		hold = *list;
+		while (hold->next != NULL)
+		{
+			hold2 = hold;
+			hold = hold->next;
+			free(hold2);
+		}
+		free(hold);
 	}
-	return (NULL);
+	if (list != NULL)
+		free (list);
+	hold = NULL;
+	hold2 = NULL;
 }

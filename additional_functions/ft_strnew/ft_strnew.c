@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:16:43 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/12 10:11:45 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/28 15:59:39 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ char	*ft_strnew(size_t size)
 	new = (char *)malloc(sizeof(char) * (size + 1));
 	if (!new)
 		return (NULL);
-	ft_memset(new, '\0', size);
+	ft_bzero(new, sizeof(char) * (size + 1));
 	return (new);
 }

@@ -18,5 +18,9 @@ int	main(void)
 	printf("0 ==> %d\n", a);
 	a = ft_atoi("-173");
 	printf("-173 ==> %d\n", a);
+	a = ft_atoi("\t\v\f\r\n-06050");
+	printf("\t\v\f\r\n-06050 ==> %d\n", a);
+	a = ft_atoi("\t\v\f\r\n \f-06050");
+	printf("\t\v\f\r\n \f-06050 ==> %d\n", a);
 	return (0);
 }

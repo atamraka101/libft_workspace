@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:39:33 by atamraka          #+#    #+#             */
-/*   Updated: 2021/11/25 14:12:00 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/28 14:59:54 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ char	*ft_strdup(const char *s1)
 		copy[i] = s1[i];
 		i++;
 	}
+	copy[i] = '\0';
 	return (copy);
 }
