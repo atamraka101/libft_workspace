@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 20:09:00 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/17 10:50:59 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/28 17:52:51 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd < 0 || !c)
-		return ;
 	write(fd, &c, 1);
 }

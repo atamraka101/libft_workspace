@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:12:24 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/07 15:56:21 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/28 17:24:15 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memalloc(size_t size)
 {
 	void	*new;
 
-	new = malloc(size);
+	new = (void *)malloc(size);
 	if (!new)
 		return (NULL);
 	ft_bzero(new, size);
