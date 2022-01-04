@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 11:43:02 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/13 21:15:07 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/28 20:34:17 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*ft_strtrim(char const *s)
 	unsigned int	back;
 
 	front = 0;
+	if (!s)
+		return (NULL);
 	while (s[front] == ' ' || s[front] == '\n' || s[front] == '\t')
 		front++;
 	if (s[front] == '\0')

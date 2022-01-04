@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s)
 	unsigned int	back;
 
 	front = 0;
+	if (!s)
+		return (NULL);
 	while (s[front] == ' ' || s[front] == '\n' || s[front] == '\t')
 		front++;
 	if (s[front] == '\0')

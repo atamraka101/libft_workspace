@@ -11,7 +11,7 @@
 */
 
 #include "libft.h"
-#include <stdio.h>
+//#include <stdio.h>
 //#include <string.h>
 
 static int	n_words(char const *s, char c)
@@ -33,7 +33,7 @@ static int	n_words(char const *s, char c)
 	return (n_words);
 }
 
-/*static char	*inner_list(char const *s, size_t n)
+static	char	*inner_list(char const *s, size_t n)
 {
 	char	*list;
 
@@ -41,13 +41,11 @@ static int	n_words(char const *s, char c)
 	if (!list)
 		return (NULL);
 	list = ft_strncpy(list, s, n);
-	//list = strncpy(list, s, n);
 	list[n] = '\0';
-	//printf("innerlist %s\n", list);
 	return (list);
 }
 
-static int	free_array(char ***tab, int count)
+/*static int	free_array(char ***tab, int count)
 {
 	int	i;
 
@@ -60,7 +58,7 @@ static int	free_array(char ***tab, int count)
 	free(*tab);
 	return (0);
 }
-*/
+
 
 char	**ft_strsplit(char const *s, char c)
 {
@@ -103,5 +101,69 @@ char	**ft_strsplit(char const *s, char c)
 		}
 		cur++;
 	}
+	return (res);
+}*/
+
+static	void	free_list_items(char **res, int ndx)
+{
+	int	i;
+
+	i = ndx;
+	while (i >= 0)
+	{
+		if (res[i])
+			free(res[i]);
+		i--;
+	}
+	free(res);
+}
+
+static	void	fill_words(char **list, char const *s, char c)
+{
+	int	i;
+	int	j;
+	int	k;
+
+	i = 0;
+	k = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		j = i;
+		while (s[i] && s[i] != c)
+			i++;
+		if (i > j)
+		{
+			list[k] = inner_list(&s[j], i - j);
+			if (!list[k])
+			{
+				free_list_items(list, k);
+				return ();
+			}
+			k++;
+		}
+	}
+	list[k] = NULL;
+}
+
+char	**ft_strsplit(char const *s, char c)
+{
+	int		w_count;
+	char	**res;
+
+	if (s == NULL || c == '\0')
+	{
+		res = (char **)malloc(sizeof(char *));
+		if (!res)
+			return (NULL);
+		res[0] = NULL;
+		return (res);
+	}
+	w_count = n_words(s, c);
+	res = (char **)malloc(sizeof(char *) * w_count + 1);
+	if (!res)
+		return (NULL);
+	fill_words(res, s, c);
 	return (res);
 }

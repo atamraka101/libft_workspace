@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 16:31:56 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/28 20:30:35 by atamraka         ###   ########.fr       */
+/*   Created: 2021/12/16 15:20:31 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/31 16:27:35 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Sets every character of the string to the value ’\0’.
-** params, string that needs to be cleared
-** returns none
+** Outputs the integer n to the standard output.
+** Param. #1 The integer to output.
 */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+void	ft_putnbr(int n)
 {
-	unsigned int	i;
+	unsigned int	nb;
+	unsigned int	sign;
 
-	i = 0;
-	if (!s)
-		return ;
-	while (s[i] != '\0')
+	nb = n;
+	sign = 1;
+	if (n < 0)
 	{
-		s[i] = '\0';
-		i++;
+		ft_putchar('-');
+		sign = -1;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+	{
+		ft_putchar((char)(sign * (nb + '0')));
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 15:20:31 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/16 20:06:02 by atamraka         ###   ########.fr       */
+/*   Updated: 2022/01/01 17:27:40 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,23 @@
 
 void	ft_putnbr(int n)
 {
-	unsigned int	nb;
+	unsigned int	nbr;
+	int				sign;
 
-	nb = n;
+	sign = 1;
 	if (n < 0)
 	{
 		ft_putchar('-');
-		nb *= -1;
+		sign = -1;
 	}
-	if (nb >= 10)
+	nbr = n * sign;
+	if (nbr >= 10)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
 	}
 	else
 	{
-		ft_putchar(nb + '0');
+		ft_putchar(nbr + '0');
 	}
 }

@@ -1,5 +1,6 @@
 #include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 static void free_array(char **array, int j)
 {
@@ -54,7 +55,7 @@ int main(void)
 	else
 		printf("[KO]\n");
 	free_array(array2, 6);
-
+	system("leaks a.out");
 	return (0);
 }
 /*#include "libft.h"

@@ -7,6 +7,12 @@ int	main(void)
 {
 	int a;
 
+	printf("Check");
+	a = ft_atoi("  \t\n  \r\r\v\f-899");
+	printf("ft_atoi():  \t\n  \r\r\v\f-899 ==> %d\n", a);
+	printf("atoi():  \t\n  \r\r\v\f-899 ==> %d\n", atoi("  \t\n  \r\r\v\f-899"));
+
+	/*
 	a = ft_atoi("-+42");
 	printf("-+42 ==> %d\n", a);
 	printf("-+42 ==> %d", atoi("-+42"));
@@ -21,6 +27,7 @@ int	main(void)
 	a = ft_atoi("\t\v\f\r\n-06050");
 	printf("\t\v\f\r\n-06050 ==> %d\n", a);
 	a = ft_atoi("\t\v\f\r\n \f-06050");
-	printf("\t\v\f\r\n \f-06050 ==> %d\n", a);
+	printf("\t\v\f\r\n \f-06050 ==> %d\n", a);*/
+
 	return (0);
 }

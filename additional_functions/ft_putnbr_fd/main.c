@@ -2,6 +2,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <stdio.h>
+#include <limits.h>
 
 static void t_putchar_fd(char *filename, char c)
 {
@@ -32,7 +33,11 @@ int main(void)
 	t_putchar_fd("t_putnbr_fd.txt", '\n');
 	t_putnbr_fd("t_putnbr_fd.txt", -107);
 	t_putchar_fd("t_putnbr_fd.txt", '\n');
-	t_putnbr_fd("t_putnbr_fd.txt", -2147483648);
+	t_putnbr_fd("t_putnbr_fd.txt", INT_MIN);
+	t_putchar_fd("t_putnbr_fd.txt", '\n');
+	t_putnbr_fd("t_putnbr_fd.txt", INT_MIN + 1);
+	t_putchar_fd("t_putnbr_fd.txt", '\n');
+	t_putnbr_fd("t_putnbr_fd.txt", INT_MAX);
 	t_putchar_fd("t_putnbr_fd.txt", '\n');
 	t_putnbr_fd("t_putnbr_fd.txt", 0);
 	t_putchar_fd("t_putnbr_fd.txt", '\n');

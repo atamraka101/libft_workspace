@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:18:57 by atamraka          #+#    #+#             */
-/*   Updated: 2022/01/01 16:48:31 by atamraka         ###   ########.fr       */
+/*   Updated: 2022/01/01 15:46:04 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,19 @@
 */
 #include "libft.h"
 
-static int	length(int n)
+static int	lengthX(int n)
 {
 	int	i;
+	//int	nb;
 
 	i = 0;
+	//nb = n;
 	if (n <= 0)
+	{
 		i++;
+		//if (n < 0)
+		//	nb = -n;
+	}
 	while (n != 0)
 	{
 		n = n / 10;
@@ -33,12 +39,11 @@ static int	length(int n)
 	return (i);
 }
 
-static char	*fill_string(char *a, int n, int i)
+static char	*set_string(char *a, int n, int i)
 {
-	unsigned int	nbr;
-	int				sign;
+	unsigned int	copy;
 
-	sign = 1;
+	copy = n;
 	a[i--] = '\0';
 	if (n == 0)
 	{
@@ -47,19 +52,19 @@ static char	*fill_string(char *a, int n, int i)
 	}
 	if (n < 0)
 	{
-		sign = -1;
 		a[0] = '-';
+		copy *= -1;
 	}
-	nbr = n * sign;
-	while (nbr > 0)
+	while (copy > 0)
 	{
-		a[i--] = (nbr % 10) + '0';
-		nbr = nbr / 10;
+		a[i] = (copy % 10) + '0';
+		copy = copy / 10;
+		i--;
 	}
 	return (a);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoaX(int n)
 {
 	int		i;
 	char	*a;
@@ -68,6 +73,14 @@ char	*ft_itoa(int n)
 	a = (char *)malloc((sizeof(char)) * (i + 1));
 	if (!a)
 		return (NULL);
-	fill_string(a, n, i);
+	set_string(a, n, i);
 	return (a);
+}
+
+char	*ft_itoa(int n)
+{
+	int		i;
+	char	*a;
+
+
 }

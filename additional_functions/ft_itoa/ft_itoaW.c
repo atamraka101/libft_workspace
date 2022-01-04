@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:18:57 by atamraka          #+#    #+#             */
-/*   Updated: 2022/01/01 16:48:31 by atamraka         ###   ########.fr       */
+/*   Updated: 2022/01/01 16:45:08 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,40 @@ static int	length(int n)
 	return (i);
 }
 
-static char	*fill_string(char *a, int n, int i)
+/*static char	*set_stringx(char *a, int n, int i)
+{
+	unsigned int	copy;
+
+	unsigned int x = (unsigned int) n;
+	copy = n;
+	printf("Copy: %u, x: %u\n", copy, x);
+	a[i--] = '\0';
+	if (n == 0)
+	{
+		a[0] = '0';
+		return (a);
+	}
+	if (n < 0)
+	{
+		a[0] = '-';
+		x = x - (INT_MIN + n);
+		printf("new X %u\n", x);
+		copy *= -1;
+		printf("new Copy %u\n", copy);
+	}
+	while (copy > 0)
+	{
+		a[i] = (copy % 10) + '0';
+		copy = copy / 10;
+		i--;
+	}
+	return (a);
+}*/
+
+static char *fill_string(char *a, int n, int i)
 {
 	unsigned int	nbr;
-	int				sign;
+	int sign;
 
 	sign = 1;
 	a[i--] = '\0';
@@ -58,7 +88,6 @@ static char	*fill_string(char *a, int n, int i)
 	}
 	return (a);
 }
-
 char	*ft_itoa(int n)
 {
 	int		i;

@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 16:31:56 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/28 20:30:35 by atamraka         ###   ########.fr       */
+/*   Created: 2021/11/24 15:30:44 by atamraka          #+#    #+#             */
+/*   Updated: 2021/12/12 11:24:37 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Sets every character of the string to the value ’\0’.
-** params, string that needs to be cleared
-** returns none
-*/
-
 #include "libft.h"
 
-void	ft_strclr(char *s)
+size_t	ft_strlen(const char *s)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
-	if (!s)
-		return ;
 	while (s[i] != '\0')
-	{
-		s[i] = '\0';
 		i++;
-	}
+	return (i);
 }

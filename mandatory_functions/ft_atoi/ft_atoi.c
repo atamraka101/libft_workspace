@@ -6,7 +6,7 @@
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 12:39:57 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/03 15:44:28 by atamraka         ###   ########.fr       */
+/*   Updated: 2021/12/28 22:16:58 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	result;
+	unsigned int	i;
+	long			sign;
+	long			result;
 
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\n'
-			|| str[i] == '\t' || str[i] == 'v' || str[i] == '\f'))
+	while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\n' || str[i] == '\r'
+			|| str[i] == '\t' || str[i] == '\v' || str[i] == '\f'))
 		i++;
 	if (str[i] != '\0' && (str[i] == '-' || str[i] == '+'))
 	{
@@ -43,5 +43,5 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	result = result * sign;
-	return (result);
+	return ((int)result);
 }

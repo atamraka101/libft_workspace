@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atamraka <atamraka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 16:31:56 by atamraka          #+#    #+#             */
-/*   Updated: 2021/12/28 20:30:35 by atamraka         ###   ########.fr       */
+/*   Created: 2021/11/24 11:01:56 by atamraka          #+#    #+#             */
+/*   Updated: 2022/01/01 21:02:38 by atamraka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Sets every character of the string to the value ’\0’.
-** params, string that needs to be cleared
-** returns none
+** locate byte in byte string
+** returns a pointer to the byte located, or,
+** NULL if no such byte exist within n bytes
 */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
+	unsigned char	*copy;
 
 	i = 0;
-	if (!s)
-		return ;
-	while (s[i] != '\0')
+	copy = (unsigned char *)s;
+	while (i < n)
 	{
-		s[i] = '\0';
+		if (copy[i] == (unsigned char)c)
+			return (&copy[i]);
 		i++;
 	}
+	return (NULL);
 }
